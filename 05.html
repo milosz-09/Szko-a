@@ -4,31 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #koszyk img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
 </head>
 <body>
-<input type="file" id="plik" accept="image/png, image/jpd"></input><br> <br>
-<input type="number" id="L_kopii"> <br><br>
+<div id="zamowienie">
+    <p>Zamówienie</p>
+    <label for="">Wybierz obraz: </label><input type="file" id="plik" accept="image/png, image/jpd"></input> <br><br>
 
-<input type="radio"> 
-<label for="">Paier błyszczący</label> <br>
-<input type="radio"> 
-<label for="">Papier matowy</label> <br><br>
-<button type="submit" id="btn">Dodaj do koszyka</button>
+    <label for="">Ilość kopii: </label><input type="number" id="L_kopii"> <br><br>
+
+    <input type="radio"><label for="">Paier błyszczący</label> <br>
+    <input type="radio"><label for="">Papier matowy</label> <br><br>
+
+    <button type="submit" id="btn">Dodaj do koszyka</button>
+</div>
         
-    </div>
-    <div id="koszyk">   </div>
+    
+<div id="koszyk"></div>
 
 </body>
 
 <script>
 
- const btn = document.querySelector("#btn")
+    const btn = document.querySelector("#btn")
     const koszyk = document.querySelector("#koszyk")
 
     btn.addEventListener("click", function przeslij(){
         let img = document.createElement("img")
         img.src = URL.createObjectURL(document.querySelector("#plik").files[0])
         koszyk.appendChild(img)
+
+
+        const para = document.createElement("p");
+        para.innerText = "Slavek";
+        para.className = "nazwaKlasyCSS";
+        document.body.appendChild(para)
     })
+
+    
 </script>
-</html>     
+</html> 
