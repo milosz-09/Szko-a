@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<input type="file" id="plik" accept="image/png, image/jpd"></input><br> <br>
+<input type="number" id="L_kopii"> <br><br>
+
+<input type="radio"> 
+<label for="">Paier błyszczący</label> <br>
+<input type="radio"> 
+<label for="">Papier matowy</label> <br><br>
+<button type="submit" id="btn">Dodaj do koszyka</button>
+        
+    </div>
+    <div id="koszyk">   </div>
+
+</body>
+
+<script>
+
+ const btn = document.querySelector("#btn")
+    const koszyk = document.querySelector("#koszyk")
+
+    btn.addEventListener("click", function przeslij(){
+        let img = document.createElement("img")
+        img.src = URL.createObjectURL(document.querySelector("#plik").files[0])
+        koszyk.appendChild(img)
+    })
+</script>
+</html>     
