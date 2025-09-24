@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        td{
+            border: solid black 1px;
+        }
+    </style>
+
+</head>
+<body>
+    <table style="border: solid black 1px;">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+
+        </tr>
+        <tr>
+            <td>1a</td>
+            <td>2a</td>
+            <td>3a</td>
+            <td>4a</td>
+            <td>5a</td>
+        </tr>
+        <tr>
+            <td>1b</td>
+            <td>2b</td>
+            <td>3b</td>
+            <td>4b</td>
+            <td>5b</td>
+        </tr>
+        <tr>
+            <td>1c</td>
+            <td>2c</td>
+            <td>3c</td>
+            <td>4c</td>
+            <td>5c</td>
+        </tr>
+        <tr>
+            <td>1d</td>
+            <td>2d</td>
+            <td>3d</td>
+            <td>4d</td>
+            <td>5d</td>
+        </tr>
+    </table>
+
+    <script>
+        const tds = document.querySelectorAll("td")
+        let klik = 0
+        tds.forEach(td => {
+            td.addEventListener("click", function(){
+                if(klik == 0){
+                td.style = "background-color: black"
+                klik = 1
+                }else{
+                    td.style = "background: white"
+                    klik = 0
+                }
+            })
+            
+        });
+    </script>
+
+</body>
+</html>
