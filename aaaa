@@ -1,0 +1,21 @@
+ class wynik:
+# def __init__(self, wynik):
+# self.wynik = wynik
+
+class druzyna:
+def __init__(self, a, b):
+self.nazwa = a
+self.gole = b
+druzyna1 = druzyna("SPARTANIE JERKA", 4)
+druzyna2 = druzyna("AMICUS MÓRKA", 7)
+druzyna3 = druzyna("POGOŃ KSIĄŻ", -1)
+
+class ligaPodworkowa:
+def __init__(self, druzyny):
+self.druzyny = druzyny
+def podajtopdruzyn(self):
+print(self.druzyny[0].nazwa, self.druzyny[0].gole)
+
+liga = ligaPodworkowa(druzyny=[druzyna1, druzyna2, druzyna3])
+
+liga.podajtopdruzyn()
