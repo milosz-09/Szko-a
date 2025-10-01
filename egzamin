@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>KALKULATOR KOSZTÓW MONTAŻU</p>
+    <label for="">Szerokość omieszczenia [m]:</label> <input type="text" id="szerokosc">
+    <label for="">Długość pomieszczenia [m]</label> <input type="text" id="dlugosc"> <br><br>
+    <label for="">Typ panelu</label> <br><br><br>
+    <input type="radio" name="r1" value="12"><label for="">Panele laminowane</label><br>
+    <input type="radio" name="r1" value="14"><label for="">Panele winylowe</label><br>
+    <input type="radio" name="r1" value="18"><label for="">Deska podłogowa</label><br>
+    <button id="but" >Oblicz</button><br><br><br>
+    
+    <p id="wynik"></p>
+
+
+
+    <script>
+
+        const btn = document.querySelector("but")
+        btn.addEventListener("click", function(){
+            let szerokosc = document.querySelector("szerokosc").value
+            let dlugosc = document.querySelector("dlugosc").value
+
+            if(szerokosc > 0 || dlugosc > 0){
+                let powierzchnia = szerokosc * dlugosc
+                let panel = document.querySelector("input[name = r1]:checked").value
+                let montaz = powierzchnia * panel
+                wynik
+            }
+
+        })
+    </script>
+</body>
+</html>
