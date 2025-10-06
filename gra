@@ -2,40 +2,42 @@ import random
 
 
 class gracz:
-    def __init__(self, HP, ATK, DEF,):
+    def __init__(self,):
         self.HP = 100
         self.ATK = 10
-        self.DEF = random.randint(1,2)
+        self.DEF = random.randint(1,1)
 
-    def attack(self, oponent):
+    def attack(self, gracz2):
         if(self.DEF == 1):
-            oponent.HP -= self.ATK
+            gracz2.HP -= self.ATK
             print("Graczowi udało się zaatakować! HP oponenta zmiejszyło się do: ")
     
-    def HEAL(self, HP):
+    def HEAL(self):
         if(random.randint(1,10) == 1):
             self.HP += 25
 
 class oponent:
-    def __init__(self, HP, ATK, DEF):
+    def __init__(self,):
         self.HP = 100
         self.ATK = 10
-        self.DEF = random.randint(1,10)
+        self.DEF = random.randint(1,1)
 
-    def attack(self, gracz):
+    def attack(self, gracz1):
         if(self.DEF == 1):
-            gracz.HP -= self.ATK
-            print("")
+            gracz1.HP -= self.ATK
 
 atak = int(input("Pod klawiszem 1 wykonuje sie atak"))
 atak2 = int(input("Pod klawiszem 9 wykonuje sie atak"))
 
-while gracz.HP < 1:
+gracz1 = gracz()
+gracz2 = oponent()
+
+while gracz1.HP > 1 or gracz2.HP >1:
     if atak == 1:
-        gracz.attack()
-        print(oponent.HP)
+        gracz1.attack(gracz2)
+        print(gracz2.HP)
 
     if atak2 == 9:
-        oponent.attack()
-        print(gracz.HP)
+        gracz2.attack(gracz1)
+        print(gracz1.HP)
 
