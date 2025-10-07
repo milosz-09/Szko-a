@@ -1,0 +1,49 @@
+mapa = []
+
+for i in range(5):
+    wiersz = []
+
+    for j in range(9):
+        wiersz.append([])
+    
+    mapa.append(wiersz)
+
+for wiersz in mapa:
+    print(wiersz)
+
+
+
+def construnctmap(x,y):
+    tab = []
+    tabl = []
+    for yt in range(y):
+        tabl.append(["[]"])
+
+    for xl in range(x):
+        tab.append(tabl)
+    return tab
+
+WIDTH = int(input("Podaj szerokość:"))
+HEIGHT = int(input("Podaj wysokość:"))
+
+class enemy:
+    def __init__(self, hp, spownX, spownY):
+        self.HP = hp
+        self.x = spownX
+        self.y = spownY
+
+    
+
+tab = construnctmap(HEIGHT, WIDTH)
+for x in tab:
+    for y in x:
+        print(y[0], end="")
+    print()
+
+
+enemy = enemy(100, HEIGHT=1, WIDTH=1)
+tab[enemy.x][enemy.y] = "[e]"
+for x in tab:
+    for y in x:
+        print(y, end="")
+    print()
