@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            background: lightblue;
+            font-family: Arial;
+            text-align: center;
+            padding: 30px;
+        }
+        h2 { color: darkblue; }
+        #chat {
+            width: 500px;
+            height: 400px;
+            background: white;
+            border: 4px solid black;
+            margin: 20px auto;
+            padding: 15px;
+            text-align: left;
+            overflow-y: scroll;
+        }
+        .ja {
+            background: lightgreen;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 15px;
+        }
+        .michal {
+            background: yellow;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 15px;
+        }
+        input {
+            width: 400px;
+            height: 40px;
+            font-size: 20px;
+        }
+        button {
+            height: 48px;
+            width: 120px;
+            background: green;
+            color: white;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Chat z Michałem</h2>
+    <a href="sechs.php">← wróć do domu</a>
+
+    <div id="chat">
+        <div class="michal">Michał: Cześć! Co słychać?</div>
+    </div>
+
+    <br>
+    <input type="text" id="wpisz" placeholder="Napisz coś...">
+    <button onclick="wyslij()">Wyślij</button>
+
+<script>
+
+const odpowiedziMichala = [
+    "Haha dobre!",
+    "No nieźle!",
+    "Serio??",
+    "Lol",
+    "Super historia!"
+];
+
+function wyslij() {
+
+    let tekst = document.getElementById("wpisz").value;
+
+
+
+
+    let chat = document.getElementById("chat");
+    let twoja = document.createElement("div");
+    twoja.className = "ja";
+    twoja.innerHTML = "Ty: " + tekst;
+    chat.appendChild(twoja);
+
+
+    document.getElementById("wpisz").value = "";
+
+
+    let los = Math.floor(Math.random() * 5);
+    let odpowiedz = odpowiedziMichala[los];
+
+    let michal = document.createElement("div");
+    michal.className = "michal";
+    michal.innerHTML = "Michał: " + odpowiedz;
+    chat.appendChild(michal);
+
+
+    chat.scrollTop = chat.scrollHeight;
+}
+</script>
+
+</body>
+</html>
