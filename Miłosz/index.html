@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header>
+        <h1>Portal edukacyjny</h1> 
+        <p>Podstawowe pojęcia informatyczne</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Podstawowe pojęcia</h2>
+            <dl>
+                <dt>HTML - </dt> <dd>Język znaczników służący do tworzenia struktury stron internetowych.</dd> 
+                <dt>CSS - </dt> <dd>Język stylów używany do opisu wyglądu elementów HTML.</dd> 
+                <dt>JavaScript - </dt> <dd>Język programowania umożliwiający tworzenie dynamicznych elementów stron.</dd> 
+            </dl>
+        </section>
+
+        <section>
+            <h2>Wybór koloru</h2>
+            <form id="formularz">
+                <label>Wpisz lub wybierz kolor:</label><br>
+                <input list="inputs" name="input" id="kolor" >
+                <datalist id="inputs">
+                    <option value="red"></option>
+                    <option value="blue"></option>
+                    <option value="green"></option>
+                    <option value="yellow"></option>
+                </datalist>
+                <button onclick="tworzenie()">Dodaj element</button>
+
+            </form>
+        </section>
+
+        <section>
+            <h2>Dodane elementy</h2>
+            <div id="kontener"></div>
+        </section>
+    </main>
+    <footer>
+        <p>Autor: Miłosz Łabenda 3PB</p>
+    </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
